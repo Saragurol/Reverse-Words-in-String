@@ -3,14 +3,15 @@ function reverseWordsInString(string) {
   let words = [];
   let startOfWord = 0;
 
-  for(let i = 1; i < string.length; i++){
+  for(let i = 0; i < string.length; i++){
     let character = string[i]
+
     if(character === ' '){
       words.push(string.slice(startOfWord, i))
       startOfWord = i;
     } else if (string[startOfWord] === ' '){
       words.push(' ');
-      startOfWord += 1;
+      startOfWord = i;
     }
   }
 
@@ -19,6 +20,7 @@ function reverseWordsInString(string) {
   return words.join('');
 }
 reverseWordsInString('tim is great') // 'great is tim'
+// reverseWordsInString(' t') // 't '
 
 function reverseWords(array){
   let start = 0;
